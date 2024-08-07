@@ -1,0 +1,144 @@
+#gameBoard {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 200px); /* Ajusta según tu diseño */
+  gap: 5px; /* Espacio entre celdas */
+  background-image: url('images/fondo-juego.jpg'); /* Establece la imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra todo el espacio disponible */
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 150px);
+  gap: 5px; /* Ajusta este valor según el espacio que desees entre celdas */
+  justify-content: center; /* Centra el tablero horizontalmente si es necesario */
+}
+
+.cell {
+  width: 150px; /* Nuevo tamaño de las celdas */
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent; /* Mantiene el fondo de la celda transparente */
+}
+
+/* Clase para el estado activo de las celdas */
+.cell.active {
+  pointer-events: none; /* Desactiva la interactividad */
+  cursor: default; /* Cambia el cursor a default */
+}
+
+/* Aplica los colores del estado hover al estado activo */
+.red.active { background-color: #e68760; }
+.blue.active { background-color: #0096d2; }
+.green.active { background-color: #33ff33; }
+.yellow.active { background-color: #F79F00; }
+.pink.active { background-color: #ff33ff; }
+
+/* Colores para cada grupo */
+.red { background-color: red; }
+.blue { background-color: blue; }
+.green { background-color: green; }
+.yellow { background-color: yellow; }
+.pink { background-color: pink; }
+
+/* Colores al pasar el mouse por encima */
+.red:hover { background-color: #e68760; } /* Rojo más brillante */
+.blue:hover { background-color: #0096d2; } /* Azul más brillante */
+.green:hover { background-color: #33ff33; } /* Verde más brillante */
+.yellow:hover { background-color: #F79F00; } /* Amarillo más brillante */
+.pink:hover { background-color: #ff33ff; } /* Rosa más brillante */
+
+
+.red, .blue, .green, .yellow, .pink {
+  box-shadow: 0 0 8px 16px rgba(255,255,255,0.7); /* Aumenta el esparcimiento para un borde más ancho */
+}
+
+.question-mark {
+  font-size: 62px; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Texto en negrita */
+}
+
+#cofre {
+  position: absolute;
+  width: 300px; /* Cubre el espacio de 2x2 celdas */
+  height: 300px;
+  background-image: url('images/cofre.jpg');
+  background-size: cover;
+  top: 620px; /* Ajustado según el cálculo */
+  left: 620px; /* Ajustado según el cálculo */
+  z-index: 10; /* Para asegurar que se muestre por encima de otras celdas */
+}
+
+#puntajes {
+  display: flex;
+  justify-content: center; /* Alinea los elementos horizontalmente al centro */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si no caben */
+  gap: 50px; /* Espacio entre los botones */
+  margin-top: 30px; /* Espacio más grande en la parte superior */
+  font-size: 44px; /* Tamaño de letra más grande */
+}
+
+#puntajes button {
+  padding: 10px 20px; /* Espaciado interno para hacer los botones más grandes */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+  border: 1px solid #000; /* Borde sólido para definir mejor los botones */
+  border-radius: 5px; /* Bordes redondeados para un look más suave */
+  background-color: #f2f2f2; /* Color de fondo claro para el botón */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+  font-size: 34px; /* Tamaño de letra más grande */
+}
+
+#puntajes button:hover {
+  background-color: #e6e6e6; /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+
+#puntaje-rojo { background-color: #ffcccc; } /* Rojo claro */
+#puntaje-azul { background-color: #ccefff; } /* Azul claro */
+#puntaje-verde { background-color: #ccffcc; } /* Verde claro */
+#puntaje-amarillo { background-color: #ffffcc; } /* Amarillo claro */
+#puntaje-rosa { background-color: #ffccff; } /* Rosa claro */
+
+
+.contenedor-pantalla-completa {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000; /* Asegura que se muestre por encima de otros elementos */
+  overflow-y: auto; /* Permite desplazarse si el contenido es muy largo */
+}
+
+#contenedor-pregunta {
+  background: white;
+  border: 20px solid royalblue; /* Margen azul rey para preguntas */
+  font-size: 70px; /* Tamaño de la fuente aumentado */
+ 
+}
+
+#contenedor-respuesta {
+  background: white;
+  border: 20px solid green; /* Margen verde para respuestas */
+  font-size: 70px; /* Tamaño de la fuente aumentado */
+}
+
+.contenedor-pantalla-completa button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 50px;
+}
+
+.cell.respondida {
+  pointer-events: none; /* Desactiva eventos de clic en la celda */
+  opacity: 0.1; /* Opcional: cambia la opacidad para indicar visualmente que la celda ha sido respondida */
+}
+

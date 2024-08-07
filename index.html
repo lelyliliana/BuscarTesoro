@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="estilo.css">
+<title>Tablero de Juego Interactivo</title>
+</head>
+<body>
+
+<div id="gameBoard" class="game-board">
+  <!-- Aquí se añadirán las celdas con JavaScript -->
+  <div id="cofre" style="position: absolute; width: 300px; height: 300px; background-image: url('images/cofre.jpg'); background-size: cover;"></div>
+</div>
+
+<div id="puntajes" class="puntajes">
+ <div class="equipo">
+    <button onclick="actualizarPuntuacion('rojo', 100)">+100</button>
+    <button onclick="actualizarPuntuacion('rojo', -100)">-100</button>
+    <div id="puntaje-rojo">Rojo: 0</div>
+ </div>
+ 
+ <div class="equipo">  
+    <button onclick="actualizarPuntuacion('azul', 100)">+100</button>
+    <button onclick="actualizarPuntuacion('azul', -100)">-100</button>
+    <div id="puntaje-azul">Azul: 0</div>
+</div>
+
+ <div class="equipo">  
+  <button onclick="actualizarPuntuacion('verde', 100)">+100</button>
+  <button onclick="actualizarPuntuacion('verde', -100)">-100</button>
+  <div id="puntaje-verde">Verde: 0</div>
+</div>
+ 
+ <div class="equipo"> 
+  <button onclick="actualizarPuntuacion('amarillo', 100)">+100</button>
+  <button onclick="actualizarPuntuacion('amarillo', -100)">-100</button>
+  <div id="puntaje-amarillo">Amarillo: 0</div>
+</div>
+ 
+ <div class="equipo"> 
+  <button onclick="actualizarPuntuacion('rosa', 100)">+100</button>
+  <button onclick="actualizarPuntuacion('rosa', -100)">-100</button>
+  <div id="puntaje-rosa">Rosa: 0</div>
+</div>
+</div>
+
+<!-- Contenedor para la pregunta -->
+<div id="contenedor-pregunta" class="contenedor-pantalla-completa" style="display:none;">
+  <div id="texto-pregunta"></div>
+  <img id="imagen-pregunta" src="" alt="Imagen de la pregunta" style="max-width: 100%; max-height: 70%;">
+  <button onclick="mostrarRespuesta()">Ver Respuesta</button>
+</div>
+
+<!-- Contenedor para la respuesta -->
+<div id="contenedor-respuesta" class="contenedor-pantalla-completa" style="display:none;">
+  <div id="texto-respuesta"></div>
+  <img id="imagen-respuesta" src="" alt="Imagen de la respuesta" style="max-width: 100%; max-height: 70%;">
+  <button onclick="cerrarRespuesta()">Cerrar Respuesta</button>
+</div>
+
+
+<script src="preguntas.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
